@@ -19,7 +19,7 @@ function App() {
   };
   useEffect(() => {
     handleLoad();
-  }, []);
+  }, [order]);
   return (
     <>
       <div>
