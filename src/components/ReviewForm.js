@@ -19,7 +19,6 @@ function ReviewForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(values);
   };
   return (
     <form className="ReviewForm" onSubmit={handleSubmit}>
