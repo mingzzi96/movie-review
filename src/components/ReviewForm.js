@@ -13,6 +13,7 @@ const INITIAL_VALUES = {
 
 function ReviewForm({
   initialValues = INITIAL_VALUES,
+  initialPreview,
   onSubmitSuccess,
   onCancel,
 }) {
@@ -68,6 +69,7 @@ function ReviewForm({
       <FileInput
         name="imgFile"
         value={values.imgFile}
+        initialPreview={initialPreview}
         onChange={handleChange}
       />
       <textarea
