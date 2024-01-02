@@ -32,7 +32,18 @@ function FileInput({ name, value, initialPreview, onChange }) {
 
   return (
     <div>
-      {preview ? <img src={preview} alt="이미지 미리보기" /> : null}
+      {preview ? (
+        <img
+          src={preview}
+          alt="이미지 미리보기"
+          style={{
+            maxWidth: "400px",
+            maxHeight: "400px",
+            objectFit: "cover",
+            display: "block",
+          }}
+        />
+      ) : null}
       <input
         type="file"
         accept="image/png, image/jpeg"
