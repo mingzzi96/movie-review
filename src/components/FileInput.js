@@ -22,6 +22,12 @@ function FileInput({ name, value, onChange }) {
 
     const nextPreview = URL.createObjectURL(value);
     setPreview(nextPreview);
+
+    return () => {
+      // 정리 함수
+      setPreview();
+      URL.revokeObjectURL(nextPreview);
+    };
   }, [value]);
 
   return (
