@@ -33,7 +33,12 @@ function FileInput({ name, value, onChange }) {
   return (
     <div>
       {preview ? <img src={preview} alt="이미지 미리보기" /> : null}
-      <input type="file" onChange={handleChange} ref={inputRef} />
+      <input
+        type="file"
+        accept="image/png, image/jpeg"
+        onChange={handleChange}
+        ref={inputRef}
+      />
       {value ? <button onClick={handleClearClick}>초기화 하기</button> : null}
     </div>
   );
