@@ -38,7 +38,7 @@ function ReviewForm() {
       <FileInput
         name="imgFile"
         value={values.imgFile}
-        onChanage={handleChange}
+        onChange={handleChange}
       />
       <textarea
         name="content"
