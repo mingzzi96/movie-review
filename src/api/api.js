@@ -20,7 +20,7 @@ export async function createReview(formData) {
     body: formData,
   });
   if (!response.ok) {
-    throw new Error(`데 실패했습니다.`);
+    throw new Error(`리뷰 작성에 실패했습니다.`);
   }
   const body = await response.json();
   return body;
