@@ -1,0 +1,9 @@
+.Rating-star {
+  color: rgb(234, 234, 234);
+  font-size: 18px;
+}
+
+.Rating-star.selected {
+  font-weight: bold;
+  color: rgb(255, 217, 0);
+}
