@@ -8,7 +8,7 @@ export async function getReviews({
   const query = `order=${order}&offset=${offset}&limit=${limit}`;
   const response = await fetch(`${BASE_URL}/film-reviews?${query}`);
   if (!response.ok) {
-    throw new Error(`에러를 불러오는데 실패했습니다.`);
+    throw new Error(`리뷰 리스트를 불러오는데 실패했습니다.`);
   }
   const body = await response.json();
   return body;
