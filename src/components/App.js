@@ -8,6 +8,7 @@ import {
 } from "../api/api";
 import ReviewForm from "./ReviewForm";
 import useAsync from "../hooks/useAsync";
+import LocaleContext from "../contexts/LocaleContext";
 
 const LIMIT = 6;
 
@@ -72,28 +73,30 @@ function App() {
 
   return (
     <>
-      <div>
-        <button onClick={handleNewestClick}>최신순</button>
-        <button onClick={handleBestClick}>베스트순</button>
-      </div>
-      <div>
-        <ReviewForm
-          onSubmit={createReview}
-          onSubmitSuccess={handleCreateSuccess}
-        />
-        <ReviewList
-          items={sortedItems}
-          onDelete={handleDelete}
-          onUpdate={updateReview}
-          onUpdateSuccess={handleUpdateSuccess}
-        />
-        {hasNext && (
-          <button disabled={isLoading} onClick={handleLoadMore}>
-            + 더 보기
-          </button>
-        )}
-        {loadingError?.message ? <p>{loadingError.message}</p> : null}
-      </div>
+      <LocaleContext.Provider value={"ko"}>
+        <div>
+          <button onClick={handleNewestClick}>최신순</button>
+          <button onClick={handleBestClick}>베스트순</button>
+        </div>
+        <div>
+          <ReviewForm
+            onSubmit={createReview}
+            onSubmitSuccess={handleCreateSuccess}
+          />
+          <ReviewList
+            items={sortedItems}
+            onDelete={handleDelete}
+            onUpdate={updateReview}
+            onUpdateSuccess={handleUpdateSuccess}
+          />
+          {hasNext && (
+            <button disabled={isLoading} onClick={handleLoadMore}>
+              + 더 보기
+            </button>
+          )}
+          {loadingError?.message ? <p>{loadingError.message}</p> : null}
+        </div>
+      </LocaleContext.Provider>
     </>
   );
 }
