@@ -7,7 +7,7 @@ import {
   updateReview,
 } from "../api/api";
 import ReviewForm from "./ReviewForm";
-import useAsync from "./hooks/useAsync";
+import useAsync from "../hooks/useAsync";
 
 const LIMIT = 6;
 
